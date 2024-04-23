@@ -1,0 +1,19 @@
+{
+  "name": "@savingsatoshi/bitcoin_rpcjs",
+  "version": "75.1.0",
+  "description": "faux bitcoin core for Saving Satoshi code challenges",
+  "main": "bitcoin_rpc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saving-satoshi/bitcoin_rpcjs.git"
+  },
+  "author": "Ben Allen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saving-satoshi/bitcoin_rpcjs/issues"
+  },
+  "homepage": "https://github.com/saving-satoshi/bitcoin_rpcjs#readme"
+}
