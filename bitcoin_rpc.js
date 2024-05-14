@@ -5,16 +5,15 @@ class Bitcoin {
         this.state = JSON.parse(fs.readFileSync('chainstate.json', 'utf8'))
     }
 
-    static rpc(method, params) {
-        const instance = new Bitcoin()
+    rpc(method, params) {
         if (!method) {
             throw new Error("First argument 'method' is required.\nExecute `rpc('help')` for help")
         }
-        if (instance[method]) {
+        if (this[method]) {
             if (params) {
-                return instance[method](params)
+                return this[method](params)
             } else {
-                return instance[method]()
+                return this[method]()
             }
         } else {
             throw new Error(`Method '${method}' not found\nExecute \`rpc('help')\` for help`)
@@ -23,7 +22,7 @@ class Bitcoin {
 
     help() {
         return `
-Bitcoin Core v75.1.0
+Bitcoin Core v253.1.2
 RPC commands:
 
 getinfo
@@ -64,7 +63,7 @@ getblocksbyheight ( height )
 
     getinfo() {
         return {
-            version: "Bitcoin Core v75.1.0",
+            version: "Bitcoin Core v253.1.2",
             blocks: parseInt(Math.max(...Object.keys(this.state["blocks_by_height"]))),
             headers: parseInt(Math.max(...Object.keys(this.state["blocks_by_height"]))),
             prune_height: parseInt(Math.min(...Object.keys(this.state["blocks_by_height"]))),
